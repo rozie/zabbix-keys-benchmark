@@ -10,6 +10,7 @@ my $file  = 'keys2.txt';
 my @keys  = ();
 my %data  = ();
 
+# read keys from file
 open( F, "<", $file ) or die "Cannot open $file\n";
 while (<F>) {
     chomp;
@@ -17,6 +18,7 @@ while (<F>) {
 }
 close(F);
 
+# perform benchmark given number of times
 for ( my $i = 0 ; $i <= $count ; $i++ ) {
     foreach my $key (@keys) {
         my $stime = time() * 1000000;
